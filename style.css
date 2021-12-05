@@ -1,0 +1,12 @@
+body {
+    background-color: rgb(95, 103, 122);
+}
+
+.header {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    color: rgb(211, 216, 199);
+    display:flex;
+    justify-content: center;
+    filter: drop-shadow(5px 5px 2px rgb(62, 74, 90));
+}
