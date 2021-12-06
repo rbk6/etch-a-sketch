@@ -1,25 +1,32 @@
-
-let slider = document.getElementById('grid');
-let rowcol = document.getElementById('value');
-rowcol.innerHTML = slider.value;
-
-slider.oninput = function() {
-    rowcol.innerHTML = this.value;
+function createGrid(size){
+    let grid = document.createElement('div');
+    for(let i = 0; i < size; i++){
+        for(let j = 0; j < size; j++){
+            let cell = document.createElement('div');
+            cell.className = 'cell'
+            cell.textContent += 'x';
+            grid.appendChild(cell);
+        }
+    }
+    document.body.appendChild(grid);
+    grid.id = 'grid';
+    adjustCell(size);
 }
 
-function createGrid() {
-    let x = slider;
-    let grid = document.createElement('div');
-    for(let i = 0; i < x; i++){
-        let newRow = document.createElement('div');
-        newRow.id = 'row' + i;
-        newRow.className = 'square';
-        for(let j = 0; j < x; j++){
-            let newCol = document.createElement('div');
-            newCol.id = 'col' + i;
-            newCol.className = 'square';
-            newRow.appendChild(newCol);
-        }
-        grid.appendChild(newRow);
+
+
+function adjustCell(size){
+    let fix = document.getElementsByClassName('cell');
+    let value = 500/size;
+    let styles = {
+        "height" : value+"px",
+        "flex-basis" : value+"px"
+    };
+    for(let i = 0; i < fix.length; i++){
+        let div = fix[i];
+        Object.assign(div.style, styles);
     }
 }
+
+
+createGrid(16);
