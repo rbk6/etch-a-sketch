@@ -1,6 +1,10 @@
-var slider = document.getElementById('gridSize');
-var displaySize = document.getElementById('size');
+const slider = document.getElementById('gridSize');
+const displaySize = document.getElementById('size');
+const grid = document.querySelector('#grid');
 displaySize.innerHTML = slider.value;
+displaySize.innerHTML = 16;
+createGrid(16);
+
 slider.oninput = function() {
     displaySize.innerHTML = this.value;
     createGrid(this.value);
@@ -9,9 +13,6 @@ slider.oninput = function() {
 function createGrid(size){
     if(document.getElementById('grid') !== ""){
         document.getElementById('grid').innerHTML = "";
-    }
-    else {
-        let grid = document.getElementById('grid');
     }
     for(let i = 0; i < size; i++){
         for(let j = 0; j < size; j++){
@@ -38,5 +39,8 @@ function adjustCell(size){
     }
 }
 
-displaySize.innerHTML = 16;
-createGrid(16);
+grid.addEventListener('mouseover', function(c){
+    if(c.target.matches('.cell')){
+        c.target.classList.add('draw');
+    }
+});
