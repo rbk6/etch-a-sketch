@@ -1,10 +1,22 @@
+var slider = document.getElementById('gridSize');
+var displaySize = document.getElementById('size');
+displaySize.innerHTML = slider.value;
+slider.oninput = function() {
+    displaySize.innerHTML = this.value;
+    createGrid(this.value);
+}
+
 function createGrid(size){
-    let grid = document.createElement('div');
+    if(document.getElementById('grid') !== ""){
+        document.getElementById('grid').innerHTML = "";
+    }
+    else {
+        let grid = document.getElementById('grid');
+    }
     for(let i = 0; i < size; i++){
         for(let j = 0; j < size; j++){
             let cell = document.createElement('div');
-            cell.className = 'cell'
-            cell.textContent += 'x';
+            cell.className = 'cell';
             grid.appendChild(cell);
         }
     }
@@ -12,8 +24,6 @@ function createGrid(size){
     grid.id = 'grid';
     adjustCell(size);
 }
-
-
 
 function adjustCell(size){
     let fix = document.getElementsByClassName('cell');
@@ -28,5 +38,5 @@ function adjustCell(size){
     }
 }
 
-
+displaySize.innerHTML = 16;
 createGrid(16);
