@@ -1,6 +1,7 @@
 const slider = document.getElementById('gridSize');
 const displaySize = document.getElementById('size');
 const grid = document.querySelector('#grid');
+const color = document.getElementById('color-pick');
 displaySize.innerHTML = slider.value;
 displaySize.innerHTML = 16;
 createGrid(16);
@@ -15,11 +16,14 @@ function createGrid(size){
         document.getElementById('grid').innerHTML = "";
     }
     for(let i = 0; i < size; i++){
+        let row = document.createElement('div');
+        row.className = 'row';
         for(let j = 0; j < size; j++){
             let cell = document.createElement('div');
             cell.className = 'cell';
-            grid.appendChild(cell);
+            row.appendChild(cell);
         }
+        grid.appendChild(row);
     }
     document.body.appendChild(grid);
     grid.id = 'grid';
@@ -31,6 +35,7 @@ function adjustCell(size){
     let value = 500/size;
     let styles = {
         "height" : value+"px",
+        "width" : value+"px",
         "flex-basis" : value+"px"
     };
     for(let i = 0; i < fix.length; i++){
