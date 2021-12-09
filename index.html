@@ -4,17 +4,29 @@
         <title>Etch a Sketch</title>
         <link rel="stylesheet" href="style.css">
         <meta charset="UTF-8">
-
+        <link rel="icon" href="./icon.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display&display=swap" rel="stylesheet">
     </head>
     <body>
         <script src="script.js" defer></script>
+        <h1 id="before">Etch a Sketch</h1>
+        <div id="grid"></div>
         <div class="container">
-            <h1>Etch a Sketch!</h1>
-            <p>Adjust the grid size: <span id="size"></span>²</p>
-            <div class="slidecontainer">
-                <input type="range" min="1" max="50" class="slider" id="gridSize">
+            <div style="display:flex; flex-direction: column; justify-content: flex-start;">
+                <input type="range" min="1" max="100" value="16" class="slider" id="gridSize">
+                <p>Edit Grid Size</p>
+                <p><span id="size"></span> x <span id="width"></span></p>
+            </div>
+            <div>
+                <input type="button" class="button" onclick="clearGrid()">
+                <p style="margin-top: -12px; margin-bottom: 128px;">Clear Grid</p>
             </div>
         </div>
-        <div id='grid'></div>
+        <div class="footer">
+            <p>Thank you for checking out my project! You can find more <a href="https://github.com/rbk6">on my GitHub</a>.</p>
+            <img src="./icon.png" class="pic" alt="etch a sketch icon">
+        </div>
     </body>
 </html>
