@@ -11,11 +11,11 @@
     </head>
     <body>
         <script src="script.js" defer></script>
-        <h1 id="before">Etch a Sketch</h1>
-        <div id="grid"></div>
-        <div class="container">
+        <h1 id="before" style="text-shadow: 2px 2px 2px rgb(25, 25, 59);">etch a sketch</h1>
+        <div id="grid" style="box-shadow: 0 2px 5px rgb(25, 25, 59);"></div>
+        <div class="container" style="text-shadow: 2px 2px 2px rgb(25, 25, 59);">
             <div style="display:flex; flex-direction: column; justify-content: flex-start;">
-                <input type="range" min="1" max="100" value="16" class="slider" id="gridSize">
+                <input type="range" min="1" max="64" value="16" class="slider" id="gridSize">
                 <p>Edit Grid Size</p>
                 <p><span id="size"></span> x <span id="width"></span></p>
             </div>
@@ -24,9 +24,8 @@
                 <p style="margin-top: -12px; margin-bottom: 128px;">Clear Grid</p>
             </div>
         </div>
-        <div class="footer">
+        <div class="footer" style="box-shadow: 2px 2px 2px rgb(25, 25, 59); text-shadow: 2px 2px 2px rgb(25, 25, 59);">
             <p>Thank you for checking out my project! You can find more <a href="https://github.com/rbk6">on my GitHub</a>.</p>
-            <img src="./icon.png" class="pic" alt="etch a sketch icon">
         </div>
     </body>
 </html>
